@@ -32,9 +32,9 @@ window.addEventListener(
 
     async function appendContactInfo() {
       // Use the delay in ms
-      console.log("Delay timer: start");
+      //   console.log("Delay timer: start");
       await delay(timerDelay);
-      console.log("Delay timer: finish");
+      //   console.log("Delay timer: finish");
 
       // Find all the elements we want
       const adLinks = document.querySelectorAll(adLinkClass);
@@ -69,7 +69,7 @@ window.addEventListener(
         // Set a timeout to run after scrolling ends
         isScrolling = setTimeout(function () {
           // Run the callback
-          console.log("Scrolling has stopped.");
+          //   console.log("Scrolling has stopped.");
           // Reset the delay
           let timerDelay = 0;
           // Run the amend function
