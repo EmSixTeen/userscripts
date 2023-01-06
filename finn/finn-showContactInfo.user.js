@@ -2,6 +2,7 @@
 // @name         Show profile info automatically
 // @namespace    finndotno
 // @version      0.1
+// @updateURL    https://github.com/EmSixTeen/userscripts/raw/master/finn/finn-showContactInfo.user.js
 // @description  Skip the annoying extra step of having to click the "Vis profilinfo" link
 // @author       Aaron Gregg
 // @match        *://*.finn.no/*
