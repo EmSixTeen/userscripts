@@ -11,7 +11,7 @@
 // ==/UserScript==
 
 const adClass = ".ads__unit";
-const textToFind = "Solgt";
+const textToFind = ["Solgt", "Annonsen er slettet"];
 const scrollDelay = 125;
 let timerDelay = 1000;
 let isScrolling;
@@ -26,15 +26,12 @@ window.addEventListener(
   function () {
     async function hideSoldItems() {
       // Use the delay in ms
-      //   console.log("Delay timer: start");
       await delay(timerDelay);
-      //   console.log("Delay timer: finish");
 
       // Find all the elements we want
-      //const adLinks = document.querySelectorAll(adLinkClass);
       const ads = document.querySelectorAll(adClass);
 
-      // Loop through the links we got, and ammend the URL
+      // Loop through the links we got
       ads.forEach((ad) => {
         if (ad.textContent.includes(textToFind)) {
           ad.setAttribute("style", "display: none;");
