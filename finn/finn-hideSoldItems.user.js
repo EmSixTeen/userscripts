@@ -11,7 +11,7 @@
 // ==/UserScript==
 
 const adClass = ".ads__unit";
-const textToFind = ["Solgt", "Annonsen er slettet"];
+const textToFind = "Solgt";
 const scrollDelay = 125;
 let timerDelay = 1000;
 let isScrolling;
