@@ -13,6 +13,7 @@
 const adClass = ".ads__unit";
 const soldText = "Solgt";
 const removedText = "Annonsen er slettet";
+const givenText = "Gitt bort";
 const scrollDelay = 125;
 let timerDelay = 1000;
 let isScrolling;
@@ -36,9 +37,14 @@ window.addEventListener(
       ads.forEach((ad) => {
         if (
           ad.textContent.includes(soldText) ||
+          ad.textContent.includes(givenText) ||
           ad.textContent.includes(removedText)
         ) {
           ad.setAttribute("style", "display: none;");
+          //   ad.setAttribute(
+          //     "style",
+          //     "outline: 5px solid red; outline-offset: 5px;"
+          //   );
         }
       });
     }
