@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remove sold items
 // @namespace    finndotno
-// @version      0.2
+// @version      0.3
 // @description  Hide items that have been sold and given away
 // @author       Aaron Gregg
 // @match        *://*.finn.no/*
