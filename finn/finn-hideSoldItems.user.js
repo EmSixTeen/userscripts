@@ -11,7 +11,8 @@
 // ==/UserScript==
 
 const adClass = ".ads__unit";
-const textToFind = "Solgt";
+const soldText = "Solgt";
+const removedText = "Annonsen er slettet";
 const scrollDelay = 125;
 let timerDelay = 1000;
 let isScrolling;
@@ -33,7 +34,10 @@ window.addEventListener(
 
       // Loop through the links we got
       ads.forEach((ad) => {
-        if (ad.textContent.includes(textToFind)) {
+        if (
+          ad.textContent.includes(soldText) ||
+          ad.textContent.includes(removedText)
+        ) {
           ad.setAttribute("style", "display: none;");
         }
       });
@@ -52,11 +56,9 @@ window.addEventListener(
 
         // Set a timeout to run after scrolling ends
         isScrolling = setTimeout(function () {
-          // Run the callback
-          //   console.log("Scrolling has stopped.");
           // Reset the delay
           let timerDelay = 0;
-          // Run the amend function
+          // Run the function
           hideSoldItems();
         }, scrollDelay);
       },
