@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Google Maps link
+// @name         Finn.no - Google Maps link
 // @namespace    finndotno
 // @version      1.0
 // @description  Change the map link to Google Maps on Finn adverts and open it in a new tab
@@ -21,8 +21,8 @@
 
   // Function to add the style attribute to the element
   function addStyleToElement(element) {
-    element.style.outline = "2px solid red";
-    element.style.display = "inline-block";
+    //element.style.outline = '2px solid red';
+    element.style.display = "inline-flex";
   }
 
   // Function to extract postcode and location from aria-label
@@ -60,23 +60,8 @@
       openInGoogleMapsSpan.textContent = " (open in Google Maps)";
       openInGoogleMapsSpan.classList.add("maps-label");
 
-      // Create a <div> element and add the specified classes
-      const containerDiv = document.createElement("div");
-      containerDiv.classList.add(
-        "text-16",
-        "text-blue-600",
-        "flex",
-        "items-center",
-        "mt-32",
-        "mb-8"
-      );
-
-      // Append the <a> element and <span> element to the <div> element
-      containerDiv.appendChild(link);
-      containerDiv.appendChild(openInGoogleMapsSpan);
-
-      // Replace the <a> element with the <div> element in the DOM
-      link.parentNode.replaceChild(containerDiv, link);
+      // Append the <span> element after the <a> element
+      link.parentNode.insertBefore(openInGoogleMapsSpan, link.nextSibling);
 
       break; // Stop after the first matching link
     }
